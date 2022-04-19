@@ -38,12 +38,7 @@
       /* reset line height 1*fontsize */
       line-height: 1;
     }
-    img {
-      height: 200px;
-      transform: scale(1.5);
-      border-radius: 8px;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    }
+
     .carousel {
       background-color: #087f5b;
       width: 800px;
@@ -55,6 +50,13 @@
       gap: 86px;
       align-items: center;
       position: relative;
+    }
+
+    img {
+      height: 200px;
+      transform: scale(1.5);
+      border-radius: 8px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
     }
 
     .testinomial-text {
@@ -78,7 +80,8 @@
       justify-content: center;
       align-items: center;
       border-radius: 50%;
-      color: white;
+      /* color: white; */
+      background-color: white;
       border: 0px;
       box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.5);
       cursor: pointer;
@@ -97,6 +100,27 @@
       height: 24px;
       width: 24px;
       stroke: #087f5b;
+    }
+
+    .dots{
+      display: flex;
+      gap: 10px;
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translate(-50%, 44px);
+    }
+
+    .dot{
+      height: 12px;
+      width: 12px;
+      background-color: white;
+      border: 2px solid #087f5b;
+      border-radius: 50%;
+      cursor: pointer;
+    }
+    .dot-selected{
+      background-color: #087f5b;
     }
   </style>
   <body>
@@ -145,6 +169,12 @@
           />
         </svg>
       </button>
+      <div class="dots">
+        <div class="dot dot-selected">&nbsp</div>
+        <div class="dot">&nbsp</div>
+        <div class="dot">&nbsp</div>
+        <div class="dot">&nbsp</div>
+      </div>
     </div>
   </body>
 </html>
