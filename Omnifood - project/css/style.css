@@ -49,31 +49,9 @@ body {
   color: #555;
 }
 
-
-
 /**************************/
-/* HERO SECTION */
+/* Common Reusable components */
 /**************************/
-
-.section-hero {
-  background-color: #fdf2e9;
-  padding: 9.6rem 0;
-}
-
-.hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: center;
-  gap: 9.6rem;
-  /* if we use width it will not be responsive, max width will shrink as frame resizes  */
-  /* once max-width 1300px reached it won't extend further */
-  max-width: 130rem;
-  /* margin auto will make left and right as centered element.  */
-  /* NOTE: it won't be centered if it Doesn't contain width specified**** */
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-
 .heading-primary {
   font-size: 5.2rem;
   font-weight: 700;
@@ -82,12 +60,6 @@ body {
   /* since it is very small we used px, we don't want it scale basced on screen */
   letter-spacing: -0.5px;
   margin-bottom: 3.2rem;
-}
-
-.hero-description {
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
 }
 
 .btn:link,
@@ -131,16 +103,62 @@ body {
   box-shadow: inset 0 0 0 3px #fff;
 }
 
-.hero-img {
-  /* fills the entire parent element + resizes as parent shrinks ==> responsive */
-  width: 100%;
-}
-
 .margin-right-sm {
   /* margin right small */
   /* instead of adding margin on specific element or wrapping in grid and set gap */
   /* Note: it is important since we want to override the elements margin */
   margin-right: 1.6rem !important;
+}
+
+/**************************/
+/* Navigation SECTION */
+/**************************/
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fdf2e9;
+  
+  /* NOTE: why not padding-top ??? --> will make it sticky nav bar later */
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+.header--logo {
+  height: 2.2rem;
+}
+
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 9.6rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+  /* if we use width it will not be responsive, max width will shrink as frame resizes  */
+  /* once max-width 1300px reached it won't extend further */
+  max-width: 130rem;
+  /* margin auto will make left and right as centered element.  */
+  /* NOTE: it won't be centered if it Doesn't contain width specified**** */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img {
+  /* fills the entire parent element + resizes as parent shrinks ==> responsive */
+  width: 100%;
 }
 
 .delivered-meals {
