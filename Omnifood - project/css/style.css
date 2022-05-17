@@ -14,11 +14,12 @@
 
 ----- 02 COLORS
     Primary : #e67e22
-    Tints:
-    Shades:
+    Tints: #fdf2e9  -- tints and shade generator of primary color
+    Shades: #cf711f
     Aceents:
     Greys
     #555
+    #333
 
 ----- 05 Shadows
 
@@ -28,24 +29,149 @@
 
 */
 
-*{
-    padding: 0px;
-    margin: 0px;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: sans-serif;
-    line-height: 1;
-    font-weight: 400;
-    color: #555;
+html {
+  /* default 16px, if we choose 10px means  10px/16px = 62.5% of default*/
+  /* we need to respect user preference default px so, we set it as percentage */
+  /* font-size: 62.5%; */
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Rubik", sans-serif;
+  line-height: 1; /** 1*fontsize */
+  font-weight: 400;
+  color: #555;
 }
 
 
-.test{
-    /* width: 1000px; */
-    max-width: 1000px;
-    padding: 100px;
-    background-color: red;
 
+/**************************/
+/* HERO SECTION */
+/**************************/
+
+.section-hero {
+  background-color: #fdf2e9;
+  padding: 9.6rem 0;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 9.6rem;
+  /* if we use width it will not be responsive, max width will shrink as frame resizes  */
+  /* once max-width 1300px reached it won't extend further */
+  max-width: 130rem;
+  /* margin auto will make left and right as centered element.  */
+  /* NOTE: it won't be centered if it Doesn't contain width specified**** */
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+
+.heading-primary {
+  font-size: 5.2rem;
+  font-weight: 700;
+  line-height: 1.05;
+  color: #333;
+  /* since it is very small we used px, we don't want it scale basced on screen */
+  letter-spacing: -0.5px;
+  margin-bottom: 3.2rem;
+}
+
+.hero-description {
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 2rem;
+  padding: 1.6rem 3.2rem;
+  font-weight: 600;
+  border-radius: 9px;
+  /* simple css animation - transition */
+  /* we can specify value that changes or all --> transition happens on it as specified time */
+  /* transition: background-color 1s; */
+  transition: background-color 0.3s;
+}
+
+.btn--full:link,
+.btn--full:visited {
+  background-color: #e67e22;
+  color: #fff;
+}
+
+.btn--full:hover,
+.btn--full:active {
+  /* change to more darker shade of same color background*/
+  background-color: #cf711f;
+}
+
+.btn--outline:link,
+.btn--outline:visited {
+  color: #555;
+  background-color: #fff;
+}
+
+.btn--outline:hover,
+.btn--outline:active {
+  background-color: #fdf2e9;
+  /* NOTE: if we use border, UI will jump on adding border to buttion*/
+  /* border: 3px solid #555; */
+  /* box-shadow: inside-or-outside(default outside)  no-offset no-horizantly-vertically no-blur  scale color; */
+  box-shadow: inset 0 0 0 3px #fff;
+}
+
+.hero-img {
+  /* fills the entire parent element + resizes as parent shrinks ==> responsive */
+  width: 100%;
+}
+
+.margin-right-sm {
+  /* margin right small */
+  /* instead of adding margin on specific element or wrapping in grid and set gap */
+  /* Note: it is important since we want to override the elements margin */
+  margin-right: 1.6rem !important;
+}
+
+.delivered-meals {
+  display: flex;
+  margin-top: 8rem;
+  align-items: center;
+  gap: 1.6rem;
+}
+
+.delivered-imgs {
+  display: flex;
+}
+
+.delivered-imgs img {
+  height: 4.8rem;
+  width: 4.8rem;
+  border-radius: 50%;
+  margin-right: -1.6rem;
+  border: 3px solid #fdf2e9;
+}
+
+.delivered-imgs img:last-child {
+  margin: 0;
+}
+
+.delivered-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.delivered-text span {
+  color: #cf711f;
+  font-weight: 700;
 }
