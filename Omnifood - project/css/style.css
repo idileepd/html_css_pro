@@ -48,7 +48,12 @@
 html {
   /* default 16px, if we choose 10px means  10px/16px = 62.5% of default*/
   /* we need to respect user preference default px so, we set it as percentage */
-  /* font-size: 62.5%; */
+  /* font-size: 62.5%;  -- means 62.5% of default fon't size */
+  /*  The issue comes, if we statically set the root font size to 10px. since, 
+      if the user changed the default font size to some 20px or other px the browser won’t show that change since, 
+      we set the root font size to 10px. so, instead, 
+      use % of root font size, so that the user can see the change if he changes the default font size..
+   */
   font-size: 62.5%;
 }
 
@@ -196,6 +201,7 @@ body {
   color: #333;
   font-weight: 500;
   font-size: 1.8rem;
+  display: inline-block;
   transition: all 0.3s;
 }
 
@@ -206,12 +212,14 @@ body {
 
 /*Note: Below is And operation, if item contains .main-nav-link and .nav-cta 
   since both added so, specificity will be more
+  *** only if both classes are present it  will applied
 */
 .main-nav-link.nav-cta:link,
 .main-nav-link.nav-cta:visited {
   padding: 1.2rem 2.4rem;
   background-color: #e67e22;
   color: #fff;
+  display: inline-block;
   border-radius: 9px;
 }
 
